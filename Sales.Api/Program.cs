@@ -1,9 +1,13 @@
 using Sales.Api.Domains.Contracts;
+using Sales.Api.Domains.Customers;
 using Sales.Api.Domains.Employees;
+using Sales.Api.Domains.OrderStatuses;
 using Sales.Api.Domains.Products;
 using Sales.Api.Models;
 using Sales.Api.Services.Contratcs;
+using Sales.Api.Services.Customers;
 using Sales.Api.Services.Employees;
+using Sales.Api.Services.OrderStatuses;
 using Sales.Api.Services.Products;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +19,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<StoreDBContext>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<ICustomerDomainService, CustomerDomainService>();
+builder.Services.AddScoped<IOrderStatusService, OrderStatusService>();
+builder.Services.AddScoped<IOrderStatusDomainService, OrderStatusDomainService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEmployeeDomainService, EmployeeDomainService>();
 builder.Services.AddScoped<IProductService, ProductService>();

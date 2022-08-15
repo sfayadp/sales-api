@@ -6,7 +6,7 @@ using Sales.Api.Services.Contratcs;
 namespace Sales.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
@@ -28,9 +28,9 @@ namespace Sales.Api.Controllers
         }
 
         /// <summary>
-        /// Lista a todos los productos
+        /// Lista un producto
         /// </summary>
-        /// <returns>Lista de productos</returns>
+        /// <returns>Lista un producto</returns>
         [HttpGet]
         [Route(nameof(ProductController.GetProductByID))]
         public ProductDTO GetProductByID(int Id)
@@ -39,9 +39,9 @@ namespace Sales.Api.Controllers
         }
 
         /// <summary>
-        /// Lista un producto
+        /// Guarda un producto
         /// </summary>
-        /// <returns>Lista un producto</returns>
+        /// <returns>Guarda un producto</returns>
         [HttpPost]
         [Route(nameof(ProductController.SaveProduct))]
         public string SaveProduct(ProductDTO product)

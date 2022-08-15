@@ -6,7 +6,7 @@ using Sales.Api.Services.Contratcs;
 namespace Sales.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
